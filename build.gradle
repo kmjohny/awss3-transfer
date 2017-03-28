@@ -22,11 +22,30 @@ jar {
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+  maven {url "https://repo.spring.io/milestone/"}
+  mavenCentral()
 }
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-integration')
+  compile('org.springframework.boot:spring-boot-starter:1.4.5.RELEASE')
+  compile('org.springframework.integration:spring-integration-core:4.3.8.RELEASE')
+  compile('org.springframework.integration:spring-integration-file:4.3.8.RELEASE')
+  compile('org.springframework.integration:spring-integration-twitter:4.3.8.RELEASE')
+  compile('org.springframework.integration:spring-integration-aws:1.1.0.M1')
+  compile('org.springframework.integration:spring-integration-java-dsl:1.2.1.RELEASE')
+
+  compile('com.amazonaws:aws-java-sdk:1.11.105')
+  compile('org.springframework.social:spring-social-twitter')
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+
+// Allow passing of System variables to the bootRun and test task.
+[bootRun, test].each { runTask ->
+  configure(runTask) {
+    systemProperties System.properties
+  }
+}
+

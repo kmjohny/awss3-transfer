@@ -1,8 +1,8 @@
-# fhir-adapter
-FHIR data adapter.
+# awss3-transfer
+AWS s3 transfer.
 
 ### Initialize project using spring cli
-`spring init -j=1.8 --package-name=org.jkm.fhiradapter -g=org.jkm.fhiradapter -a=fhir-adapter -n=fhir-adapter -d=cloud-starter -build=gradle -p=jar fhir-adapter`
+`spring init -j=1.8 --package-name=org.jkm.awss3transfer -g=org.jkm.awss3transfer -a=awss3-transfer -n=awss3-transfer -d=integration -build=gradle -p=jar awss3-transfer`
 
 ### Configure guard-gradle
 * Initialize guard gradle.  

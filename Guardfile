@@ -1,7 +1,7 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-guard :gradle do
+guard :gradle, flags: '-Dspring.config.location=classpath:secret.yml' do
   watch(%r{^src/main/(.+)\.*$}) { |m| m[1].split('.')[0].split('/')[-1] }
   watch(%r{^src/test/(.+)\.*$}) { |m| m[1].split('.')[0].split('/')[-1] }
   watch('build.gradle')

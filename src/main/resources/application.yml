@@ -1,0 +1,23 @@
+logging.level:
+  org.springframework: ERROR
+  org.jkm.awss3transfer.flow: INFO
+  com.amazonaws: ERROR
+
+awss3.transfer:
+  sourceDirectory: ./demo/source
+  targetDirectory: ./demo/target
+  twitter:
+    query: election OR politics
+
+aws:
+  s3:
+    bucket: jkm-test
+    rawFolder: jkm-test/raw
+    sseFolder: jkm-test/sse
+    cseFolder: jkm-test/cse
+    download:
+      rawFilterRegex: raw/.+.json
+      sseFilterRegex: sse/.+.json
+      cseFilterRegex: cse/.+.json
+    upload:
+      filenameFilterRegex: .+.json
